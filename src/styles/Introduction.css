@@ -28,16 +28,32 @@
   max-width: 600px;
 }
 
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .hero-text {
-    padding: 1rem;
+    padding: 1.5rem;
+    text-align: center;
   }
 
+  .hero-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
   .hero-text h1 {
     font-size: 1.5rem;
   }
 
   .hero-text p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
   }
 }

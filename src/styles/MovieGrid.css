@@ -119,3 +119,83 @@ hr {
   width: 96%; 
 
 }
+
+/* Existing styles remain unchanged above... */
+
+@media (max-width: 1024px) {
+  .movies {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-bar {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .movie-grid h2 {
+    text-align: center;
+  }
+
+  .search-bar,
+  .search-wrapper {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .search-wrapper input {
+    width: 100%;
+  }
+
+  .movies {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card img {
+    height: 300px;
+  }
+
+  .movie-info h3 {
+    font-size: 1rem;
+  }
+
+  .movie-info p {
+    font-size: 0.85rem;
+  }
+
+  .movies-wrapper {
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card img {
+    height: 250px;
+  }
+
+  .close-btn {
+    padding: 0.6rem 0.7rem;
+    font-size: 1rem;
+  }
+
+  .movie-info {
+    padding: 0.8rem;
+  }
+
+  .movie-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .movie-info p {
+    font-size: 0.8rem;
+  }
+}
+
