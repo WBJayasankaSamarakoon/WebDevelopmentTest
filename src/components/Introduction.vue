@@ -12,50 +12,10 @@
 </template>
 
 <script setup>
+import '/src/styles/Introduction.css'
+
 </script>
 
 <style scoped>
-.introduction {
-  width: 100%;
-  margin-top: -50px;
-  position: relative;
-  background-color: #000; 
-  font-family: 'Open Sans', 'Gotham', Arial, sans-serif;
-}
 
-.hero-text {
-  position: relative; 
-  width: 100%;
-  padding: 4rem;
-  background: rgba(0, 0, 0, 0.6); 
-  box-sizing: border-box;
-}
-
-.hero-text h1 {
-  font-size: 2.5rem;
-  margin: 0 0 1rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: white;
-}
-
-.hero-text p {
-  font-size: 1.5rem;
-  color: #bbb;
-  max-width: 600px;
-}
-
-@media (max-width: 768px) {
-  .hero-text {
-    padding: 1rem;
-  }
-
-  .hero-text h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero-text p {
-    font-size: 0.9rem;
-  }
-}
 </style>

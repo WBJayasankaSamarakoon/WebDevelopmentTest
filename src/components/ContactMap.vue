@@ -9,9 +9,9 @@
         </div>
       </div>
 
-      <!-- Second content section with form and map -->
-      <div class="form-map-section">
-  <div class="contact-form">
+    <!-- Second content section with form and map -->
+    <div class="form-map-section">
+    <div class="contact-form">
     <form @submit.prevent="handleSubmit" novalidate>
       <div class="form-row">
         <div class="form-group name-group" :class="{ 'has-error': errors.firstName }">
@@ -106,6 +106,7 @@
 
 <script setup>
 import { reactive } from "vue";
+// import '/src/styles/ContactMap.css'
 
 const form = reactive({
   firstName: "",

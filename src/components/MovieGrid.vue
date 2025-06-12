@@ -37,182 +37,68 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import axios from 'axios'
+import '/src/styles/MovieGrid.css'
 
+// Local movies
 const movies = ref([
   {
     title: 'Batman Returns',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…',
+    description: 'Batman faces the Penguin and Catwoman in Gotham City.',
     image: new URL('/src/assets/Images/Batman.jpg', import.meta.url).href
   },
   {
     title: 'Wild Wild West',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…',
+    description: 'A sci-fi Western with gadgets and action.',
     image: new URL('/src/assets/Images/WildWest.jpg', import.meta.url).href
-  },
-  {
-    title: 'The Amazing Spiderman',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut…',
-    image: new URL('/src/assets/Images/Spiderman.jpg', import.meta.url).href
   }
 ])
 
 const searchQuery = ref('')
 
+// TMDB Bearer Token
+const bearerToken =
+  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NGY1MzkxOGQ4Yjk4NzVmOTkwMjJmNTYzMDc1MzVlOCIsIm5iZiI6MTc0OTc0ODE5OC4wLCJzdWIiOiI2ODRiMDllNTkwNTQzNmYxYWUzZGVkNzYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.VoSvFJjkSAZPyigBQnVA38cVFH-2gjIga9O6tAzqBVg'
+
+// Search and add movie from TMDB
 async function searchMovies() {
-  if (!searchQuery.value) return
+  if (!searchQuery.value.trim()) return
 
   try {
-    const apiKey = 'YOUR_TMDB_API_KEY' // Replace with actual key
     const response = await axios.get('https://api.themoviedb.org/3/search/movie', {
-      params: {
-        api_key: apiKey,
-        query: searchQuery.value
+      params: { query: searchQuery.value },
+      headers: {
+        accept: 'application/json',
+        Authorization: `Bearer ${bearerToken}`
       }
     })
 
-    if (response.data.results.length > 0) {
-      const newMovie = response.data.results[0]
+    const movie = response.data.results[0]
+    if (movie) {
       movies.value.push({
-        title: newMovie.title,
-        description: newMovie.overview || 'No description available.',
-        image: `https://image.tmdb.org/t/p/w500${newMovie.poster_path}`
+        id: movie.id,
+        title: movie.title,
+        description: movie.overview || 'No description available.',
+        image: movie.poster_path
+          ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+          : '/src/assets/Images/placeholder.jpg'
       })
       searchQuery.value = ''
+    } else {
+      alert('No movie found with that title.')
     }
   } catch (err) {
     console.error('Error fetching from TMDB:', err)
+    alert('Could not fetch movie. Try again later.')
   }
 }
 
+// Remove movie from grid
 function removeMovie(index) {
   movies.value.splice(index, 1)
 }
 </script>
 
 <style scoped>
-.movie-grid {
-  padding: 2rem;
-  color: white;
-  background-color: #1f1f1f;
-  font-family: 'Open Sans', 'Gotham', Arial, sans-serif;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  max-width: 1980px;
-  margin: 0 auto;
-  gap: 3rem;
-  padding: 0 2rem;
-}
-
-.movie-grid h2 {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.search-bar {
-  width: 30%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.search-wrapper {
-  position: relative;
-  width: 95%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-}
-
-.search-wrapper input {
-  padding: 0.8rem 1rem 0.8rem 2.5rem;
-  width: 95%;
-  background: transparent;
-  border: 1px solid #555;
-  color: white;
-  border-radius: 6px;
-  outline: none;
-  font-size: 1rem; 
-}
-
-.movies {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 1.5rem;
-}
-
-.movie-card {
-  background-color: #2b2b2b;
-  border-radius: 6px;
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
-.movie-card img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
-.close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: #2c2c2c;
-  border: none;
-  color: white;
-  padding: 0.8rem 0.9rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.movie-info {
-  padding: 1rem;
-}
-
-.movie-info h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.movie-info p {
-  font-size: 0.9rem;
-  color: #ccc;
-  margin-top: 0.5rem;
-}
-
-.movies-wrapper {
-  max-width: 1980px;
-  margin: 0 auto;
-  gap: 3rem;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-hr {
-  border: none;
-  height: 1px;
-  background-color: #444;
-  margin: 1rem auto;
-  width: 96%; 
-
-}
-
-
 </style>

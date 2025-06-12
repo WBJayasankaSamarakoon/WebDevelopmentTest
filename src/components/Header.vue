@@ -53,7 +53,7 @@ import Hero from './Hero.vue';
 }
 
 .logo {
-  width: 180px;
+  width: 200px;
 }
 
 .nav-links ul {
@@ -111,7 +111,7 @@ import Hero from './Hero.vue';
   }
   
   .logo {
-    width: 120px;
+    width: 200px;
   }
 }
 </style>
