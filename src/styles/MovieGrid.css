@@ -34,13 +34,22 @@
   justify-content: flex-end;
 }
 
-.search-icon {
+.search-icon-button {
   position: absolute;
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.search-icon {
   width: 20px;
   height: 20px;
+  pointer-events: none; /* Makes clicks pass through to the button */
 }
 
 .search-wrapper input {
@@ -51,9 +60,11 @@
   color: white;
   border-radius: 6px;
   outline: none;
-  font-size: 1rem; 
+  font-size: 1rem;
+  position: relative;
 }
 
+/* Rest of your existing styles remain exactly the same */
 .movies {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -116,12 +127,10 @@ hr {
   height: 1px;
   background-color: #444;
   margin: 1rem auto;
-  width: 96%; 
-
+  width: 96%;
 }
 
-/* Existing styles remain unchanged above... */
-
+/* Responsive styles remain exactly the same */
 @media (max-width: 1024px) {
   .movies {
     grid-template-columns: repeat(2, 1fr);
@@ -198,4 +207,3 @@ hr {
     font-size: 0.8rem;
   }
 }
-
