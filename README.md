@@ -4,7 +4,7 @@ This is the completed assessment for the Web Development position at eBEYONDS.
 
 🚀 Project Overview
 
-This project demonstrates my front-end and/or full-stack development skills, including responsive design, clean code structure, and component-based development. It was built according to the assessment instructions provided.
+This project demonstrates my front-end development skills, including responsive design, clean code structure, and component-based development. It was built according to the assessment instructions provided.
 
 🔧 Technologies Used
 
