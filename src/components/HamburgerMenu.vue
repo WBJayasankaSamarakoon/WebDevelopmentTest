@@ -8,7 +8,7 @@
     <div v-if="isOpen" class="mobile-nav-links">
       <ul>
         <li><a href="#" @click="toggleMenu">LOCATION & CONTACT</a></li>
-        <li><a href="#" @click="toggleMenu">GALLARY</a></li>
+        <li><a href="#" @click="toggleMenu">GALLERY</a></li>
       </ul>
     </div>
   </div>
