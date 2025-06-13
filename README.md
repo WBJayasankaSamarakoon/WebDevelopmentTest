@@ -1,4 +1,4 @@
-Web Development Assessment – eBEYONDS
+# Web Development Assessment – eBEYONDS
 
 This is the completed assessment for the Web Development position at eBEYONDS.
 
@@ -12,7 +12,7 @@ This project demonstrates my front-end development skills, including responsive 
 - CSS3 
 - JavaScript (Vanilla) / Vue.js
 
-📸 Screenshots
+## 🚀 Project Overview
 
 ![header pg](https://github.com/user-attachments/assets/6133b1d5-9747-48fb-aaa7-b5e287aee3d4)
 ![tablet view](https://github.com/user-attachments/assets/278f7c3c-94da-4946-a40c-a8b9f12de6f1)
@@ -22,16 +22,16 @@ This project demonstrates my front-end development skills, including responsive 
 📸 Optional requirements
 [desktop mode.pdf](https://github.com/user-attachments/files/20726295/desktop.mode.pdf)
 
-📂 Folder Structure
+## 📂 Folder Structure
 
 ![folder structure](https://github.com/user-attachments/assets/cc736d37-6c2d-4691-9b11-0a111d80e172)
 
-📥 Download
+## 📥 Download
 
 For convenience, a ZIP version of this project is also available on Google Drive:  
 [Download ZIP](https://drive.google.com/file/d/14HgPeAJKNqCoWuVTmmVpvhuhx7t1q61Q/view?usp=sharing)
 
-✉️ Contact
+## ✉️ Contact
 
 If you have any questions or need further clarification, feel free to contact me:
 
