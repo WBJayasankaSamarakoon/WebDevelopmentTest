@@ -358,9 +358,19 @@ textarea {
   }
 
   .form-row {
-    flex-direction: column;
-    gap: 0;
-    margin-bottom: 0;
+    flex-direction: row; 
+    gap: 1.5rem; 
+    margin-bottom: 1.5rem; 
+  }
+
+  .name-group {
+    flex: 1;
+    min-width: 0; 
+  }
+
+  /* Hide the spacer on mobile */
+  .name-spacer {
+    display: none;
   }
 }
 </style>

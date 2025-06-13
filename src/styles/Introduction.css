@@ -33,6 +33,7 @@
   .hero-text {
     padding: 1.5rem;
     text-align: center;
+    background: rgba(0, 0, 0, 0.9); /* Darker background for better readability */
   }
 
   .hero-text h1 {
@@ -44,16 +45,21 @@
     font-size: 1rem;
     line-height: 1.4;
     margin: 0 auto;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
+  .hero-text {
+    padding: 1rem;
+  }
+
   .hero-text h1 {
     font-size: 1.5rem;
   }
 
   .hero-text p {
     font-size: 0.95rem;
-    padding: 0 0.5rem;
+    padding: 0;
   }
 }

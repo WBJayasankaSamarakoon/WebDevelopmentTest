@@ -11,7 +11,6 @@ import HamburgerMenu from './components/HamburgerMenu.vue'
 <template>
   <div class="app-wrapper">
     <Header />
-    <HamburgerMenu />
     <main>
       <Introduction />
       <MovieGrid />

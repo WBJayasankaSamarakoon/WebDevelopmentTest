@@ -13,9 +13,4 @@
 
 <script setup>
 import '/src/styles/Introduction.css'
-
 </script>
-
-<style scoped>
-
-</style>

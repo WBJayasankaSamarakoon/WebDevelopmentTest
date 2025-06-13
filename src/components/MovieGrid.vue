@@ -2,7 +2,7 @@
   <div class="movie-grid">
     <div class="header-container">
       <h2>Collect your favourites</h2>
-      <div class="search-bar">
+      <div class="search-bar" @click="handleSearchClick">
         <div class="search-wrapper">
           <img src="/src/assets/Icons/SearchWhite.svg" alt="Search" class="search-icon" />
           <input
