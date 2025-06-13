@@ -9,7 +9,7 @@ This project demonstrates my front-end development skills, including responsive 
 🔧 Technologies Used
 
 - HTML5
-- CSS3 / SASS
+- CSS3 
 - JavaScript (Vanilla) / Vue.js
 
 📸 Screenshots
