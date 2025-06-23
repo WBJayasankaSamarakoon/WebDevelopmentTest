@@ -1,6 +1,6 @@
-# Web Development Assessment – eBEYONDS
+# Web Development Assessment 
 
-This is the completed assessment for the Web Development position at eBEYONDS.
+This is the completed assessment for the Web Development.
 
 🚀 Project Overview
 
